@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reverse Counter</title>
+</head>
+<body>
+  <label for="timeInput">Enter time in milliseconds:</label>
+  <input type="number" id="timeInput" placeholder="Enter time in milliseconds">
+  <button onclick="startTimer()">Start Timer</button>
+  <div id="counter"></div>
+  <div id = "time"></div>
+  
+  <script>
+    var initialValue;
+    var currentValue;
+    var intervalId;
+    let counter = 1;
+
+    function startTimer() {
+      var timeInput = document.getElementById('timeInput').value;
+      if (!timeInput || timeInput <= 0) {
+        alert("Please enter a valid time.");
+        return;
+      }
+      initialValue = parseInt(timeInput);
+      currentValue = initialValue;
+
+      // Update the counter every millisecond
+      intervalId = setInterval(updateCounter, 100);
+    }
+
+    // Function to update the counter
+    function updateCounter() {
+      var counterElement = document.getElementById('counter');
+
+      // Decrease the counter value
+      if (currentValue > 0) {
+        currentValue -= 100; // Decrease by 100 milliseconds
+        counterElement.textContent = formatTime(currentValue);
+      } else {
+        currentValue = initialValue; // Reset to initial value
+        let ab = document.getElementById('time'); 
+        ab.textContent = counter++;
+      }
+    }
+
+    // Function to format time in milliseconds to display in "mm:ss" format
+    function formatTime(milliseconds) {
+      var seconds = Math.floor(milliseconds / 1000);
+      var remainingMilliseconds = milliseconds % 1000;
+      return seconds + "." + remainingMilliseconds;
+    }
+  </script>
+</body>
+</html>

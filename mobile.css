@@ -1,0 +1,111 @@
+h1,h2,.rot2,#colour{
+    color: wheat;
+    text-align: center;
+    
+}
+
+#colour{
+    margin-top: 10px;
+}
+
+.rot{
+    animation-name: rotate;
+    animation-duration: 12s;
+    animation-iteration-count: 1;
+}
+
+.rot1{
+    animation-name: rotate1;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+
+.rot2{
+    animation-name: rotate2;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+
+}
+
+@keyframes rotate {
+    0%{transform:rotate(0deg);
+        font-size: x-small;
+    }
+    
+    100%{
+        transform:rotate(360deg) ;
+
+    }
+}
+
+@keyframes rotate1 {
+        0%{transform:rotate(0deg);
+            font-size: x-small;
+            opacity: 0;
+        }
+        
+        100%{
+            transform:rotate(360deg) ;
+            opacity: 1;
+    
+        }
+    
+}
+
+@keyframes rotate2 {
+    0%{transform:rotate(0deg);
+        font-size: x-small;
+        opacity: 0;
+    }
+
+    25%{opacity: 0;}
+    
+    100%{
+        transform:rotate(360deg) ;
+        opacity: 1;
+
+    }
+
+}
+
+
+.accordion{
+    
+    margin-top: 90px;
+   animation-name: new;
+   animation-duration: 12s;
+
+}
+
+@keyframes new {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    75%{opacity: 0.5;}
+    100%{opacity:1;}
+    
+}
+
+.accordion-body{
+    display: flex;
+}
+
+#problem1b,#problem2b{
+    margin-left: auto;
+}
+
+.jaadu{
+    display: block;
+}
+
+#q1a_output,#q1a_input,#q1b_input,#q1b_output,#q2a_output,#q2b_output,#q3_output,#q2a_input,#q2b_input,#q3_input{
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+}
+
+#dis1a,#dis1b,#dis2a,#dis2b,#dis3{
+    display: block;
+    margin-top: 30px;
+    margin-left: 10px;
+    border-radius: 5px 5px 5px 5px;
+}
